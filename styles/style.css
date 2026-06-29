@@ -588,7 +588,7 @@ body { overflow-x: hidden; }
   will-change: transform;       /* smooth parallax */
 }
 .photo {
-  width: 100%;
+  width: 120%;
   height: auto;
   display: block;
   filter: drop-shadow(0 28px 50px rgba(0, 0, 0, 0.5));
