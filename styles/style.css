@@ -536,7 +536,7 @@ body { overflow-x: hidden; }
   /* sits well below the floating icon band so they never overlap */
   padding-top: clamp(8rem, 30vh, 20rem);
   /* nudge the whole column a little left, off the right edge */
-  margin-right: clamp(0rem, 5vw, 5rem);
+  margin-right: clamp(0rem, 2vw, 2rem);
 }
 .about-right .section-title { margin-top: 0; }
 
@@ -544,9 +544,9 @@ body { overflow-x: hidden; }
   display: flex;
   flex-direction: column;
 }
-.work-item { margin-bottom: 2.6rem; }
+.work-item { margin-bottom: 2rem; }
 /* each entry steps further right than the one above (a stronger cascade) */
-.work-item:nth-child(2) { margin-left: clamp(0rem,3vw, 2.5rem); }
+.work-item:nth-child(2) { margin-left: clamp(0rem, 3vw, 2.5rem); }
 .work-item:nth-child(3) { margin-left: clamp(0rem, 6vw, 5rem); }
 .work-item:nth-child(4) { margin-left: clamp(0rem, 9vw, 7.5rem); }
 
@@ -584,7 +584,7 @@ body { overflow-x: hidden; }
   pointer-events: none;
 }
 .photo-wrap {
-  width: clamp(360px, 130vw, 570px);
+  width: clamp(260px, 35vw, 670px);
   will-change: transform;       /* smooth parallax */
 }
 .photo {
@@ -673,6 +673,12 @@ body { overflow-x: hidden; }
     row-gap: 1.5rem;
     padding-top: 6rem;
   }
+
+  /* mobile stacking order: photo first, then icons, then all the text */
+  .photo-pos   { order: 1; }
+  .tools       { order: 2; }
+  .about-left  { order: 3; }
+  .about-right { order: 4; }
   .about-left,
   .about-right {
     max-width: 100%;
@@ -706,7 +712,6 @@ body { overflow-x: hidden; }
     inset: auto !important;
   }
 }
-
 
 
 
