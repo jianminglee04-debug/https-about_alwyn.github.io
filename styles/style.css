@@ -744,7 +744,6 @@ body { overflow-x: hidden; }
 
 
 
-
 /* ============================================================
    ALWYN — Showcase + project detail pages
    Loads AFTER style.css. Shared by content.html (the showcase
@@ -980,6 +979,24 @@ body { overflow-x: hidden; }
   background: #000;
   border-radius: 3px;
   box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+}
+/* YouTube (or any) iframe embeds fill the cell just like a <video> does */
+.vid iframe {
+  width: 100%;
+  aspect-ratio: 9 / 16;
+  height: auto;
+  border: 0;
+  display: block;
+  background: #000;
+  border-radius: 3px;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
+}
+/* Landscape exception: add the class "wide" to a .vid cell (MV, BTS,
+   animation) and that one becomes 16:9 instead of the default 9:16.
+   e.g. <div class="vid sr wide"> ... </div> */
+.vid.wide video,
+.vid.wide iframe {
+  aspect-ratio: 16 / 9;
 }
 .vid .photo {
   display: block;
@@ -1526,7 +1543,6 @@ body { overflow-x: hidden; }
   .cover-band .cover { width: clamp(190px, 60vw, 300px); }
   .cover-band .cover-cap { flex: none; width: 100%; max-width: 460px; }
 }
-
 
 
 
